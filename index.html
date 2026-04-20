@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Widget Playground | Modern Landing Page</title>
+    <meta name="description" content="A premium testing ground for your modern web widgets. Built with high-end aesthetics and responsive design.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Poper Code Start - poper.ai -->
+    <script 
+    id="poper-js-script" 
+    data-account-id="517e29b9e3d64f39588519fca6174877" 
+    src="https://app.poper.ai/share/poper.js" 
+    defer
+    ></script>
+    <script>
+        window.Poper = window.Poper || [];
+        window.Poper.push({
+            accountID: "517e29b9e3d64f39588519fca6174877",
+        });
+    </script>
+    <!-- Poper Code End -->
+
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.5);
+            --bg: #030712;
+            --card-bg: rgba(17, 24, 39, 0.7);
+            --text-main: #f9fafb;
+            --text-dim: #9ca3af;
+            --border: rgba(255, 255, 255, 0.1);
+            --glass: rgba(255, 255, 255, 0.03);
+            --accent: #a855f7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Animated Background */
+        .bg-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(168, 85, 247, 0.15) 0%, transparent 50%);
+            filter: blur(80px);
+        }
+
+        /* Navbar */
+        nav {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(3, 7, 18, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .cta-btn {
+            background: var(--primary);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 99px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 14px var(--primary-glow);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px var(--primary-glow);
+            filter: brightness(1.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            position: relative;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-label {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 99px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(to bottom right, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            color: var(--text-dim);
+            margin-bottom: 2.5rem;
+            max-width: 90%;
+        }
+
+        .hero-visual {
+            flex: 1;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-container {
+            width: 80%;
+            aspect-ratio: 16 / 10;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            transform: perspective(1000px) rotateY(-10deg) rotateX(5deg);
+            transition: transform 0.5s ease;
+        }
+
+        .image-container:hover {
+            transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Widget Tester Section */
+        .tester-section {
+            padding: 100px 5%;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .widget-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        /* Placeholder for User Widgets */
+        .widget-slot {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 40px;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .widget-slot:hover {
+            border-color: var(--primary);
+            background: rgba(17, 24, 39, 0.9);
+            transform: translateY(-5px);
+        }
+
+        .widget-slot::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.8s ease;
+        }
+
+        .widget-slot:hover::before {
+            transform: translateX(100%);
+        }
+
+        .slot-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .slot-placeholder {
+            width: 100%;
+            flex-grow: 1;
+            border: 2px dashed var(--border);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            padding: 20px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 60px;
+            }
+            .hero-content {
+                max-width: 100%;
+                margin-bottom: 60px;
+            }
+            .hero-visual {
+                width: 100%;
+            }
+            .image-container {
+                width: 100%;
+                transform: none;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-glow"></div>
+
+    <nav>
+        <div class="logo">ANTIGRAVITY.UI</div>
+        <div class="nav-links">
+            <a href="#">Work</a>
+            <a href="#">Features</a>
+            <a href="#">Documentation</a>
+        </div>
+        <a href="#" class="cta-btn">Deploy Now</a>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-label">Interactive Playground</div>
+            <h1><span>Premium Space</span> for your Widgets</h1>
+            <p class="hero-desc">
+                A high-performance environment designed to showcase and test your custom components. High fidelity, glassmorphism, and seamless interactions out of the box.
+            </p>
+            <div style="display: flex; gap: 1rem;">
+                <a href="#test-area" class="cta-btn">Start Testing</a>
+                <a href="#" class="nav-links" style="display: inline-flex; align-items: center; border: 1px solid var(--border); padding: 0.6rem 1.2rem; border-radius: 99px; font-size: 0.9rem; color: #fff; text-decoration: none;">View Source</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="image-container">
+                <img src="hero.png" alt="Modern Tech Visual">
+            </div>
+        </div>
+    </section>
+
+    <div class="poper-9937"></div>
+
+    <section class="tester-section" id="test-area">
+        <div class="section-header">
+            <h2>Widget Live Preview</h2>
+            <p style="color: var(--text-dim);">Insert your widgets into the slots below to test responsiveness and styling.</p>
+        </div>
+
+        <div class="widget-grid">
+            <!-- Slot 1 -->
+            <div class="widget-slot" id="widget-1">
+                <div class="slot-title">Main Feed Widget</div>
+                <div class="slot-placeholder">
+                    <span><!-- Insert your widget code here --></span>
+                    <p>Ready for testing</p>
+                </div>
+            </div>
+
+            <!-- Slot 2 -->
+            <div class="widget-slot" id="widget-2">
+                <div class="slot-title">Sidebar Component</div>
+                <div class="slot-placeholder">
+                    <span><!-- Insert your widget code here --></span>
+                    <p>Ready for testing</p>
+                </div>
+            </div>
+
+            <!-- Slot 3 -->
+            <div class="widget-slot" id="widget-3">
+                <div class="slot-title">Action Widget</div>
+                <div class="slot-placeholder">
+                    <span><!-- Insert your widget code here --></span>
+                    <p>Ready for testing</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="padding: 60px 0; text-align: center; border-top: 1px solid var(--border); background: rgba(0,0,0,0.3);">
+        <div style="color: var(--text-dim); font-size: 0.8rem;">
+            &copy; 2026 Antigravity. Designed for Visual Excellence.
+        </div>
+    </footer>
+
+</body>
+</html>
